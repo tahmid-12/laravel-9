@@ -28,3 +28,6 @@ Route::get("data",[DummyController::class,'getData']);
 
 //Fetcing according to ID
 Route::get("list/{id?}",[DeviceController::class,'list']);
+
+//Posting to DB
+Route::post("add",[DeviceController::class,'add']);
