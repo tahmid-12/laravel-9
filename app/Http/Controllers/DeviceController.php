@@ -16,4 +16,16 @@ class DeviceController extends Controller
     // {
     //     return $id?devices::find($id) : devices::all();
     // }
+
+    function add(Request $req){
+        $devices = new devices;
+        $devices->name = $req->name;
+        $devices->member_id = $req->member_id;
+        $result = $devices->save();
+        if($result){
+            return ["result" => "Data Stored Successfully"];
+        }else{
+            return ["result" => "Data Failed posting"];
+        }
+    }
 }
