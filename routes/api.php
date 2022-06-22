@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DummyController;
+use App\Http\Controllers\DeviceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//Simple API Fetch
 Route::get("data",[DummyController::class,'getData']);
+
+//Device API
+// Route::get("list",[DeviceController::class,'list']);
+
+//Fetcing according to ID
+Route::get("list/{id?}",[DeviceController::class,'list']);
