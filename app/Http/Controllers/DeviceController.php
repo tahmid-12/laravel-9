@@ -7,8 +7,13 @@ use App\Models\devices;
 
 class DeviceController extends Controller
 {
-    function list()
+    function list($id=null)
     {
-        return devices::all();
+        return $id?devices::find($id) : devices::all();
     }
+
+    // function getID($id=null)
+    // {
+    //     return $id?devices::find($id) : devices::all();
+    // }
 }

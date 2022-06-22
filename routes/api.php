@@ -24,4 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get("data",[DummyController::class,'getData']);
 
 //Device API
-Route::get("list",[DeviceController::class,'list']);
+// Route::get("list",[DeviceController::class,'list']);
+
+//Fetcing according to ID
+Route::get("list/{id?}",[DeviceController::class,'list']);
