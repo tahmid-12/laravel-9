@@ -31,3 +31,6 @@ Route::get("list/{id?}",[DeviceController::class,'list']);
 
 //Posting to DB
 Route::post("add",[DeviceController::class,'add']);
+
+//Update to DB
+Route::put("update",[DeviceController::class, 'update']);

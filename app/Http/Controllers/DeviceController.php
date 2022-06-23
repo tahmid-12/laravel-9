@@ -28,4 +28,21 @@ class DeviceController extends Controller
             return ["result" => "Data Failed posting"];
         }
     }
+
+    function update(Request $req){
+        $device = devices::find($req->id);
+        $device->name = $req->name;
+        $device->member_id = $req->member_id;
+        $result = $device->save();
+
+        if($result){
+            return [
+                "result" => "Data Updated"
+            ];
+        }else{
+            return [
+                "result" => "Data Not Updated"
+            ];
+        }
+    }
 }
