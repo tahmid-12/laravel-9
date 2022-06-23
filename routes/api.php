@@ -34,3 +34,5 @@ Route::post("add",[DeviceController::class,'add']);
 
 //Update to DB
 Route::put("update",[DeviceController::class, 'update']);
+
+Route::get("search/{name}",[DeviceController::class,'search']);
